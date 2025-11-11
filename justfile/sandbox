@@ -1,0 +1,8 @@
+#!/usr/bin/env just --justfile
+@default: apply-salt
+emit-salt:
+    @just -f justfile/emit-init
+apply-salt: emit-salt
+    @echo '--- 🧂 Applying SaltStack States ---'
+    @echo "INFO: (Placeholder) salt-call --local state.apply contributor.Jonathan"
+    @echo 'INFO: Salt states applied.'

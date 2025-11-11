@@ -1,0 +1,7 @@
+project Loom is
+   for Source_Dirs use ("src");
+   for Object_Dir use "../obj/loom";
+   for Exec_Dir use "../bin";
+   with "diagnose"; with "badge"; with "loom_overlay_emitter"; with "loom_mittens_parser"; with "loom_trace_renderer";
+   package Compiler is for Default_Switches ("Ada") use ("-g", "-O2", "-gnatwa"); end Compiler;
+end Loom;

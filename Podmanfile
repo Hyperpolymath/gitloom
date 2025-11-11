@@ -1,0 +1,15 @@
+FROM fedora:latest AS builder
+LABEL maintainer="Jonathan D. A. Jewell"
+RUN dnf install -y gnat gprbuild gnatcoll-json-devel gcc make swi-prolog libsdl2-devel libsdl2_ttf-devel --setopt=tsflags=nodocs && dnf clean all
+WORKDIR /app
+COPY ada/ ada/
+COPY logic/ logic/
+COPY kanren/ kanren/
+RUN cd ada && gprbuild -P Loom.gpr
+FROM fedora:latest
+RUN dnf install -y swi-prolog libsdl2 libsdl2_ttf --setopt=tsflags=nodocs && dnf clean all
+WORKDIR /app
+COPY --from=builder /app/bin /usr/local/bin/
+COPY loom.mittens.ncl /app/config/
+ENTRYPOINT ["/usr/local/bin/diagnose"]
+CMD ["-c"]

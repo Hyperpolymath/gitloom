@@ -1,0 +1,11 @@
+#!/usr/bin/env just --justfile
+PARSER_BIN := 'ada/bin/loom_mittens_parser'
+PARSER_GPR := 'ada/loom_mittens_parser.gpr'
+@default: run-parser
+build-parser:
+    @echo '--- 🔧 Building Ada Mittens Parser ---'
+    @cd ada && gprbuild -P {{PARSER_GPR}}
+run-parser: build-parser
+    @echo '--- 🧤 Emitting Shell Scripts, Salt States, and Profiles ---'
+    @./{{PARSER_BIN}}
+    @echo "SUCCESS: All configuration artifacts emitted."

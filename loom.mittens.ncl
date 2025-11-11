@@ -1,0 +1,1 @@
+{ contributor."Jonathan" = { role = "reweaver", sandbox = "kinoite-reweaver", care_mode = true, badge_goals = ["head_held_high", "loom_repaired", "loom_perfected"], salt = { states = ["install_git", "configure_user", "sync_badges"], grains = { role = "reweaver", care_mode = true } }, init = { shell = { posix = { LOOM_ROLE = "reweaver", LOOM_CARE_MODE = "true" } } } } }

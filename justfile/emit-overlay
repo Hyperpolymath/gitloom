@@ -1,0 +1,11 @@
+#!/usr/bin/env just --justfile
+EMITTER_BIN := 'ada/bin/loom_overlay_emitter'
+EMITTER_GPR := 'ada/loom_overlay_emitter.gpr'
+@default: run-emitter
+build-emitter:
+    @echo '--- 🔧 Building Ada Overlay Emitter ---'
+    @cd ada && gprbuild -P {{EMITTER_GPR}}
+run-emitter: build-emitter
+    @echo '--- ⚡ Emitting UI Overlay JSON (Ada) ---'
+    @./{{EMITTER_BIN}}
+    @echo "SUCCESS: Overlay data written."

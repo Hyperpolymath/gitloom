@@ -1,0 +1,12 @@
+#!/usr/bin/env just --justfile
+@echo '--- 🧹 Cleaning build artifacts ---'
+@rm -f logic/output.ndjson
+@rm -f logic/kanren_facts.pl
+@rm -f docs/rituals/loom_trace.adoc
+@rm -f ui/assets/badge_overlay.json
+@rm -f config/salt/contributor/Jonathan.sls
+@rm -f loom-init.*
+@rm -rf ada/obj
+@rm -f ada/bin/*
+@rm -f git_lineage.*
+@echo 'INFO: Clean complete.'

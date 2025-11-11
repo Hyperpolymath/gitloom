@@ -1,0 +1,12 @@
+#!/usr/bin/env just --justfile
+KANREN_FACTS := 'logic/kanren_facts.pl'
+LOGIC_OUTPUT := 'logic/output.ndjson'
+@default: run-prolog
+run-kanren:
+    @echo '--- 🔬 Running MiniKanren (Generating Facts) ---'
+    @./kanren/sandboxed-kanren.sh > {{KANREN_FACTS}}
+    @echo 'INFO: MiniKanren facts written.'
+run-prolog: run-kanren
+    @echo '--- 🧠 Running Prolog (Evaluating Rules) ---'
+    @cd logic && swipl -g "consult('loom_index.pl'), run_badge_trace('gitloom'), halt." | sort -u > ../{{LOGIC_OUTPUT}}
+    @echo 'INFO: Prolog trace written.'

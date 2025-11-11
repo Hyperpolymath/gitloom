@@ -1,0 +1,11 @@
+#!/usr/bin/env just --justfile
+RENDERER_BIN := 'ada/bin/loom_trace_renderer'
+RENDERER_GPR := 'ada/loom_trace_renderer.gpr'
+@default: run-renderer
+build-renderer:
+    @echo '--- 🔧 Building Ada Trace Renderer ---'
+    @cd ada && gprbuild -P {{RENDERER_GPR}}
+run-renderer: build-renderer
+    @echo '--- 📜 Rendering Narrated Trace (Ada) ---'
+    @./{{RENDERER_BIN}}
+    @echo "SUCCESS: Narrated trace rendered."

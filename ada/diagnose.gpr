@@ -1,0 +1,8 @@
+project Diagnose is
+   for Source_Dirs use ("src");
+   for Object_Dir use "../obj/diagnose";
+   for Exec_Dir use "../bin";
+   for Main use ("diagnose.adb");
+   with "badge"; with "loom_overlay_emitter"; with "loom_mittens_parser"; with "loom_trace_renderer"; with "gnatcoll_json";
+   package Compiler is for Default_Switches ("Ada") use ("-g", "-O2", "-gnatwa"); end Compiler;
+end Diagnose;

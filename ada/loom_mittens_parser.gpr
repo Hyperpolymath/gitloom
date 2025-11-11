@@ -1,0 +1,6 @@
+project Loom_Mittens_Parser is
+   for Source_Dirs use ("src");
+   for Object_Dir use "../obj/mittens";
+   for Exec_Dir use "../bin";
+   for Main use ("loom_mittens_parser.adb");
+end Loom_Mittens_Parser;

@@ -1,0 +1,8 @@
+project Loom_Trace_Renderer is
+   for Source_Dirs use ("src");
+   for Object_Dir use "../obj/trace";
+   for Exec_Dir use "../bin";
+   for Main use ("loom_trace_renderer.adb");
+   with "gnatcoll_json";
+   package Compiler is for Default_Switches ("Ada") use ("-g", "-O2"); end Compiler;
+end Loom_Trace_Renderer;

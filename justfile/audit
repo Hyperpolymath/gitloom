@@ -1,0 +1,6 @@
+#!/usr/bin/env just --justfile
+@echo '--- 🧼 Running Audit (Ada Diagnostic) ---'
+@echo "INFO: Running in $LOOM_SANDBOX sandbox."
+@cd ada && gprbuild -P diagnose.gpr
+@./ada/bin/diagnose
+@echo 'INFO: Audit complete.'

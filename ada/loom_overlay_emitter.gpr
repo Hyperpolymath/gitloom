@@ -1,0 +1,7 @@
+project Loom_Overlay_Emitter is
+   for Source_Dirs use ("src");
+   for Object_Dir use "../obj/overlay";
+   for Exec_Dir use "../bin";
+   for Main use ("loom_overlay_emitter.adb");
+   package Compiler is for Default_Switches ("Ada") use ("-g", "-O2"); end Compiler;
+end Loom_Overlay_Emitter;
