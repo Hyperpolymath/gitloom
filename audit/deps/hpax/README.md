@@ -2,7 +2,7 @@
 
 ![CI](https://github.com/elixir-mint/hpax/actions/workflows/main.yml/badge.svg)
 [![Docs](https://img.shields.io/badge/api-docs-green.svg?style=flat)](https://hexdocs.pm/hpax)
-[![Hex.pm Version](http://img.shields.io/hexpm/v/hpax.svg?style=flat)](https://hex.pm/packages/hpax)
+[![Hex.pm Version](https://img.shields.io/hexpm/v/hpax.svg?style=flat)](https://hex.pm/packages/hpax)
 [![Coverage Status](https://coveralls.io/repos/github/elixir-mint/hpax/badge.svg?branch=main)](https://coveralls.io/github/elixir-mint/hpax?branch=main)
 
 HPAX is an Elixir implementation of the HPACK header compression algorithm as used in HTTP/2 and
@@ -37,7 +37,7 @@ To encode a set of headers into a binary with HPAX:
 
 ```elixir
 context = HPAX.new(4096)
-headers = [{:store, ":status", "201"}, {:store, "location", "http://example.com"}]
+headers = [{:store, ":status", "201"}, {:store, "location", "https://example.com"}]
 {encoded_headers, context} = HPAX.encode(headers, context)
 #=> {iodata, updated_context}
 ```
@@ -48,7 +48,7 @@ To decode a binary into a set of headers with HPAX:
 context = HPAX.new(4096)
 encoded_headers = <<...>>
 {:ok, headers, context} = HPAX.decode(encoded_headers, context)
-#=> {:ok, [{:store, ":status", "201"}, {:store, "location", "http://example.com"}], updated_context}
+#=> {:ok, [{:store, ":status", "201"}, {:store, "location", "https://example.com"}], updated_context}
 ```
 
 For complete usage information, please see the HPAX [documentation](https://hex.pm/packages/hpax).
@@ -65,7 +65,7 @@ Copyright 2021 Eric Meadows-Jönsson and Andrea Leopardi
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
-      http://www.apache.org/licenses/LICENSE-2.0
+      https://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,

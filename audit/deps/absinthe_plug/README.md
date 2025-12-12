@@ -10,7 +10,7 @@
 [Plug](https://hex.pm/packages/plug) support for [Absinthe](https://hex.pm/packages/absinthe),
 the GraphQL toolkit for Elixir.
 
-Please see the website at [http://absinthe-graphql.org](http://absinthe-graphql.org).
+Please see the website at [https://absinthe-graphql.org](https://absinthe-graphql.org).
 
 ## Installation
 
@@ -48,7 +48,7 @@ See "Usage," below, for basic usage information and links to specific resources.
 
 - [Absinthe.Plug hexdocs](https://hexdocs.pm/absinthe_plug).
 - For the tutorial, guides, and general information about Absinthe-related
-  projects, see [http://absinthe-graphql.org](http://absinthe-graphql.org).
+  projects, see [https://absinthe-graphql.org](https://absinthe-graphql.org).
 
 ## Related Projects
 
