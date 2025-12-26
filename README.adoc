@@ -9,7 +9,7 @@ Jonathan D.A. Jewell <jonathan.jewell@gmail.com>
 :url-bitbucket: https://bitbucket.org/hyperpolymath/gitloom
 :url-codeberg: https://codeberg.org/hyperpolymath/gitloom
 
-Git workflow weaving and branch management
+Git workflow weaving; repo and seam management
 
 image:https://img.shields.io/badge/RSR-Certified-gold[RSR Certified,link=https://github.com/hyperpolymath/rhodium-standard-repositories]
 image:https://img.shields.io/badge/License-AGPL%20v3-blue[License]
